@@ -1,16 +1,58 @@
-# skill_playground
+# 🛠️ Skill Playground
 
-A new Flutter project.
+Este projeto é um aplicativo Flutter desenvolvido como desafio técnico, com o objetivo de demonstrar domínio em diversos tópicos essenciais do ecossistema Flutter, incluindo navegação, gerenciamento de estado, renderização customizada, performance, injeção de dependências, etc.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 🎯 Objetivo
 
-A few resources to get you started if this is your first Flutter project:
+Criar um aplicativo com uma tela inicial contendo cards. Cada card representa um tópico técnico, e ao ser clicado, direciona o usuário para uma tela que demonstra aquela habilidade.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 📱 Funcionalidades implementadas
+
+| Tópico                        | Status |
+|------------------------------|--------|
+| 🎨 CustomPainter Basics       | ✅     |
+| 🧭 Navigator 2.0              | ✅     |
+| ⚙️ Bloc State Management      | 🔜     |
+| 🔌 Platform Channels          | 🔜     |
+| 🚀 Performance & Repaints     | 🔜     |
+| 🧵 Async Isolates             | 🔜     |
+| 🎬 AnimationController        | 🔜     |
+| 🌊 StreamBuilder c/ Erros     | 🔜     |
+| 🧩 Custom Slivers             | 🔜     |
+| 📦 Dependency Injection       | ✅     |
+
+---
+
+## 📦 Pacotes utilizados
+
+flutter_bloc – gerenciamento de estado reativo
+
+get_it – injeção de dependência
+
+just_audio – (opcional) exemplo de uso com Platform Channels
+
+flutter_test – para testes unitários e de widgets
+
+---
+
+
+## 🧱 Estrutura do projeto
+
+```bash
+lib/
+├── main.dart
+├── locator.dart
+├── navigation/                  # RouterDelegate e Parser
+├── screens/                     # Telas por tópico
+│   ├── home/
+│   ├── custom_painter/
+│   ├── bloc/
+│   └── ... etc
+├── services/                    # Serviços registrados no get_it
+├── blocs/                       # Blocs usados nas telas
+├── widgets/                     # Componentes reutilizáveis
+test/                            # Testes unitários e de widget
