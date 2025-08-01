@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:skill_playground/screens/custom_painter/custom_painter_screen.dart';
 import 'package:skill_playground/screens/home/home_screen.dart';
 import 'locator.dart';
 
@@ -17,7 +18,11 @@ class SkillPlayground extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
       ),
-      home: const HomeScreen(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const HomeScreen(),
+        '/custom_painter': (context) => const CustomPainterScreen(),
+      },
     );
   }
 }
