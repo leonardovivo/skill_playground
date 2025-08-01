@@ -1,23 +1,16 @@
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  final Function(String screen)? onTap;
 
-  final List<Map<String, dynamic>> topics = const [
-    {'title': 'CustomPainter', 'route': '/custom_painter'},
-    {'title': 'Navigator 2.0', 'route': '/router'},
-    {'title': 'Bloc', 'route': '/bloc'},
-    {'title': 'Platform Channels', 'route': '/platform'},
-    {'title': 'Performance', 'route': '/performance'},
-    {'title': 'Isolates', 'route': '/isolates'},
-    {'title': 'AnimationController', 'route': '/animation'},
-    {'title': 'StreamBuilder', 'route': '/stream_builder'},
-    {'title': 'Slivers', 'route': '/slivers'},
-    {'title': 'Dependency Injection', 'route': '/di'},
-  ];
+  const HomeScreen({super.key, this.onTap});
 
   @override
   Widget build(BuildContext context) {
+    final topics = [
+      {'title': 'CustomPainter', 'screen': 'custom_painter'},
+    ];
+
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -34,10 +27,8 @@ class HomeScreen extends StatelessWidget {
             final topic = topics[index];
             return Card(
               child: ListTile(
-                title: Text(topic['title']),
-                onTap: () {
-                  Navigator.pushNamed(context, topic['route']);
-                },
+                title: Text(topic['title']!),
+                onTap: () => onTap?.call(topic['screen']!),
               ),
             );
           },
