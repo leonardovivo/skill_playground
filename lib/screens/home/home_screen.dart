@@ -36,9 +36,7 @@ class HomeScreen extends StatelessWidget {
               child: ListTile(
                 title: Text(topic['title']),
                 onTap: () {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text('Abrir ${topic['title']}')),
-                  );
+                  Navigator.pushNamed(context, topic['route']);
                 },
               ),
             );
