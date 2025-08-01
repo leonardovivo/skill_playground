@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:skill_playground/screens/custom_painter/custom_painter_screen.dart';
-import 'package:skill_playground/screens/home/home_screen.dart';
+import 'package:skill_playground/navigation/app_route_parser.dart';
+import 'package:skill_playground/navigation/app_router_delegate.dart';
 import 'locator.dart';
 
 void main() {
@@ -8,21 +8,22 @@ void main() {
   runApp(const SkillPlayground());
 }
 
-class SkillPlayground extends StatelessWidget {
+class SkillPlayground extends StatefulWidget {
   const SkillPlayground({super.key});
+
+   @override
+  State<SkillPlayground> createState() => _SkillPlaygroundState();
+}
+
+class _SkillPlaygroundState extends State<SkillPlayground> {
+  final _routerDelegate = AppRouterDelegate();
+  final _routeParser = AppRouteParser();
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Skill Playground',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
-      ),
-      initialRoute: '/',
-      routes: {
-        '/': (context) => const HomeScreen(),
-        '/custom_painter': (context) => const CustomPainterScreen(),
-      },
+    return MaterialApp.router(
+      routerDelegate: _routerDelegate,
+      routeInformationParser: _routeParser,
     );
   }
 }
