@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:skill_playground/blocs/counter_bloc.dart';
 import '../screens/home/home_screen.dart';
 import '../screens/custom_painter/custom_painter_screen.dart';
+import '../screens/bloc/bloc_screen.dart';
 import 'app_route_path.dart';
 
 class AppRouterDelegate extends RouterDelegate<AppRoutePath>
     with ChangeNotifier, PopNavigatorRouterDelegateMixin<AppRoutePath> {
-      
   @override
   final GlobalKey<NavigatorState> navigatorKey;
 
@@ -39,6 +41,14 @@ class AppRouterDelegate extends RouterDelegate<AppRoutePath>
           const MaterialPage(
             key: ValueKey('CustomPainterPage'),
             child: CustomPainterScreen(),
+          ),
+        if (_currentScreen == 'bloc')
+          MaterialPage(
+            key: const ValueKey('BlocPage'),
+            child: BlocProvider(
+              create: (_) => CounterBloc(),
+              child: const BlocScreen(),
+            ),
           ),
       ],
       onPopPage: (route, result) {
