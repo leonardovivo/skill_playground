@@ -4,6 +4,7 @@ import 'package:skill_playground/blocs/counter_bloc.dart';
 import '../screens/home/home_screen.dart';
 import '../screens/custom_painter/custom_painter_screen.dart';
 import '../screens/bloc/bloc_screen.dart';
+import '../screens/platform/platform_channel_screen.dart';
 import 'app_route_path.dart';
 
 class AppRouterDelegate extends RouterDelegate<AppRoutePath>
@@ -49,6 +50,11 @@ class AppRouterDelegate extends RouterDelegate<AppRoutePath>
               create: (_) => CounterBloc(),
               child: const BlocScreen(),
             ),
+          ),
+        if (_currentScreen == 'platform')
+          const MaterialPage(
+            key: ValueKey('PlatformPage'),
+            child: PlatformChannelScreen(),
           ),
       ],
       onPopPage: (route, result) {
