@@ -9,6 +9,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final topics = [
       {'title': 'CustomPainter', 'screen': 'custom_painter'},
+      {'title': 'flutter_bloc', 'screen': 'bloc'},
     ];
 
     return SafeArea(
