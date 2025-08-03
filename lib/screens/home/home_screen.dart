@@ -11,6 +11,7 @@ class HomeScreen extends StatelessWidget {
       {'title': 'CustomPainter', 'screen': 'custom_painter'},
       {'title': 'flutter_bloc', 'screen': 'bloc'},
       {'title': 'Platform Channel', 'screen': 'platform'},
+      {'title': 'Performance', 'screen': 'performance'},
     ];
 
     return SafeArea(
