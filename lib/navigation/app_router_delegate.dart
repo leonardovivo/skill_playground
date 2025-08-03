@@ -5,6 +5,7 @@ import '../screens/home/home_screen.dart';
 import '../screens/custom_painter/custom_painter_screen.dart';
 import '../screens/bloc/bloc_screen.dart';
 import '../screens/platform/platform_channel_screen.dart';
+import '../screens/performance/performance_screen.dart';
 import 'app_route_path.dart';
 
 class AppRouterDelegate extends RouterDelegate<AppRoutePath>
@@ -55,6 +56,11 @@ class AppRouterDelegate extends RouterDelegate<AppRoutePath>
           const MaterialPage(
             key: ValueKey('PlatformPage'),
             child: PlatformChannelScreen(),
+          ),
+        if (_currentScreen == 'performance')
+          const MaterialPage(
+            key: ValueKey('PerformancePage'),
+            child: PerformanceScreen(),
           ),
       ],
       onPopPage: (route, result) {
