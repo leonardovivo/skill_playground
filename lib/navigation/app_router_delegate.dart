@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:skill_playground/blocs/counter_bloc.dart';
 import 'package:skill_playground/screens/animation/animation_screen.dart';
 import 'package:skill_playground/screens/isolates/isolates_screen.dart';
+import 'package:skill_playground/screens/stream/stream_screen.dart';
 import '../screens/home/home_screen.dart';
 import '../screens/custom_painter/custom_painter_screen.dart';
 import '../screens/bloc/bloc_screen.dart';
@@ -73,6 +74,11 @@ class AppRouterDelegate extends RouterDelegate<AppRoutePath>
           const MaterialPage(
             key: ValueKey('AnimationControllerPage'),
             child: AnimationScreen(),
+          ),
+          if (_currentScreen == 'stream_builder_error')
+          const MaterialPage(
+            key: ValueKey('StreamBuilderErrorPage'),
+            child: StreamScreen(),
           ),
       ],
       onPopPage: (route, result) {
