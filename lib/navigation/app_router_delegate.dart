@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:skill_playground/blocs/counter_bloc.dart';
+import 'package:skill_playground/screens/isolates/isolates_screen.dart';
 import '../screens/home/home_screen.dart';
 import '../screens/custom_painter/custom_painter_screen.dart';
 import '../screens/bloc/bloc_screen.dart';
@@ -61,6 +62,11 @@ class AppRouterDelegate extends RouterDelegate<AppRoutePath>
           const MaterialPage(
             key: ValueKey('PerformancePage'),
             child: PerformanceScreen(),
+          ),
+        if (_currentScreen == 'isolates')
+          const MaterialPage(
+            key: ValueKey('IsolatesPage'),
+            child: IsolatesScreen(),
           ),
       ],
       onPopPage: (route, result) {
