@@ -15,6 +15,7 @@ class HomeScreen extends StatelessWidget {
       {'title': 'Async Isolates', 'screen': 'isolates'},
       {'title': 'Animation Controller', 'screen': 'animation_controller'},
       {'title': 'Stream Builder', 'screen': 'stream_builder_error'},
+      {'title': 'Custom Slivers', 'screen': 'custom_slivers'},
     ];
 
     return SafeArea(
