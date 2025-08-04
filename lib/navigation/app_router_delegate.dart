@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:skill_playground/blocs/counter_bloc.dart';
+import 'package:skill_playground/screens/animation/animation_screen.dart';
 import 'package:skill_playground/screens/isolates/isolates_screen.dart';
 import '../screens/home/home_screen.dart';
 import '../screens/custom_painter/custom_painter_screen.dart';
@@ -67,6 +68,11 @@ class AppRouterDelegate extends RouterDelegate<AppRoutePath>
           const MaterialPage(
             key: ValueKey('IsolatesPage'),
             child: IsolatesScreen(),
+          ),
+        if (_currentScreen == 'animation_controller')
+          const MaterialPage(
+            key: ValueKey('AnimationControllerPage'),
+            child: AnimationScreen(),
           ),
       ],
       onPopPage: (route, result) {
