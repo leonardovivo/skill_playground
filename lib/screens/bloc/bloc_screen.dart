@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../blocs/counter_bloc.dart';
+import 'package:skill_playground/di/locator.dart';
+import 'package:skill_playground/services/logger_service.dart';
 
 class BlocScreen extends StatelessWidget {
   const BlocScreen({super.key});
@@ -13,7 +15,7 @@ class BlocScreen extends StatelessWidget {
           centerTitle: true,
           backgroundColor: Colors.purpleAccent,
           title: const Text(
-            'flutter_bloc',
+            'BLoC',
             style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
           ),
         ),
@@ -57,6 +59,21 @@ class BlocScreen extends StatelessWidget {
             ElevatedButton.icon(
               onPressed: () {
                 context.read<CounterBloc>().add(IncrementEvent());
+
+                final logger = getIt<LoggerService>();
+                const logMessage =
+                    'Botão de incremento pressionado no BlocScreen';
+
+                logger.log(logMessage);
+
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                    content: Text(
+                      'Botão de incremento pressionado (Mensagem via Dependency Injection)',
+                    ),
+                    duration: Duration(seconds: 2),
+                  ),
+                );
               },
               icon: const Icon(Icons.add),
               label: const Text('Incrementar'),
