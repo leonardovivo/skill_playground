@@ -12,6 +12,7 @@ class HomeScreen extends StatelessWidget {
       {'title': 'flutter_bloc', 'screen': 'bloc'},
       {'title': 'Platform Channel', 'screen': 'platform'},
       {'title': 'Performance', 'screen': 'performance'},
+      {'title': 'Async Isolates', 'screen': 'isolates'},
     ];
 
     return SafeArea(
