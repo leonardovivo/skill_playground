@@ -13,6 +13,7 @@ class HomeScreen extends StatelessWidget {
       {'title': 'Platform Channel', 'screen': 'platform'},
       {'title': 'Performance', 'screen': 'performance'},
       {'title': 'Async Isolates', 'screen': 'isolates'},
+      {'title': 'Animation Controller', 'screen': 'animation_controller'},
     ];
 
     return SafeArea(
