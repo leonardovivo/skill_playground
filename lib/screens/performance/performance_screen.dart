@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:skill_playground/screens/performance/widgets/grid_animated.dart';
+import 'package:skill_playground/widgets/grid_animated.dart';
 
 class PerformanceScreen extends StatelessWidget {
   const PerformanceScreen({super.key});
