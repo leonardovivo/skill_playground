@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:skill_playground/widgets/animated_ball.dart';
+import 'package:skill_playground/screens/widgets/animated_ball.dart';
 
 class AnimationScreen extends StatelessWidget {
   const AnimationScreen({super.key});
