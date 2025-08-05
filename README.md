@@ -1,6 +1,6 @@
 # 🛠️ Skill Playground
 
-Este projeto é um aplicativo Flutter desenvolvido como desafio técnico, com o objetivo de demonstrar domínio em diversos tópicos essenciais do ecossistema Flutter, incluindo navegação, gerenciamento de estado, renderização customizada, performance, injeção de dependências, testes, entre outros.
+Este projeto é um aplicativo Flutter desenvolvido como desafio técnico da COODESH, com o objetivo de demonstrar domínio em diversos tópicos essenciais do ecossistema Flutter, incluindo navegação, gerenciamento de estado, renderização customizada, performance, injeção de dependências, testes, entre outros.
 
 ---
 
